@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>File Conversion</h1>
+
+    {% if error is defined %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="form-control">
+        <div class="form-group mb-3">
+            <label for="file"></label>
+            <input type="file" name="file" id="file">
+        </div>
+
+        <button type="submit" name="csv_to_xlsx" class="btn btn-primary">CSV to XLSX</button>
+        <button type="submit" name="xlsx_to_csv" class="btn btn-primary">XLSX to CSV</button>
+    </form>
+{% endblock %}
